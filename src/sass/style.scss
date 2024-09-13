@@ -1,66 +1,147 @@
 * {
     box-sizing: border-box;
-    scroll-behavior: smoot;
 }
 
 body {
-    background: #dddcdc;
+    background: #fff;
     justify-content: center;
     min-width: 320px;
     max-width: 1800px;
     margin: 0 auto;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #292b2c;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
-button {
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 300px;
+}
+
+.btn_open {
+    background-color: rgb(104, 52, 247);
+    border-radius: 8px;
+    width: 250px;
     height: 50px;
-    width: 150px;
-    margin-left: 15px;
-    box-shadow: 4px 5px 20px black;
 }
 
-.contaner__btn {
+.btn_text {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.button_submit {
+    background-color: rgb(104, 52, 247);
+    border-radius: 8px;
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+    overflow-y: auto;
+}
+
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+.modal-content {
+    position: relative;
     display: flex;
     flex-direction: column;
+    top: 90px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+}
+
+.modal-header {
+    display: flex;
     align-items: center;
-    gap: 25px;
-    margin-top: 30px;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #eceeef;
 }
 
-.contaner__btn--rounded button {
-    border-radius: 12px;
+.modal-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
-.contaner__btn--circle button {
-    border-radius: 100%;
-    height: 150px;
-    width: 150px;
+.close {
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    text-decoration: none;
 }
 
-.btn--white {
-    background: white;
+.close:focus,
+.close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .75;
 }
 
-.btn--black {
-    background: black;
-    color: white;
-}
-
-.btn--green {
-    background: green;
-    color: white;
-}
-
-.btn--red {
-    background: red;
-    color: white;
-}
-
-.btn--grey {
-    background: grey;
-    color: white;
-}
-
-.btn--transparent {
-    background: rgba(255, 255, 255, 0);
-    border-color:rgba(255, 255, 255, 0);
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 15px;
+    overflow: auto;
 }
